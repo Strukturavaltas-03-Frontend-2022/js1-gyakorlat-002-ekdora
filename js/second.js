@@ -15,3 +15,19 @@ hogy a tömb minden eleme number típusú-e vagy sem
 - `someElementsAreNumbers`: Értéke true/false attól függően, 
 hogy a tömbben van-e number típusú elem vagy sem
 */
+
+const mixedArray = ["kiskutya", 12, true, 35, 1];
+
+const checker = (array, valueToCheck) => {
+	const numsOfArray = array.filter(item => typeof item === 'number').length;
+	const result = {
+		exists: array.includes(valueToCheck),
+		index: array.indexOf(valueToCheck),
+		allElementsAreNumbers: numsOfArray === array.length,
+		someElementsAreNumbers: !!numsOfArray,
+	};
+
+	return result;
+};
+
+checker(mixedArray, 1);
