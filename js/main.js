@@ -6,16 +6,16 @@
 - A HTML-template egy lista, amelynek a listaelemei a kapott tömb értékeit tartalmazzák.
 */
 
-const listArray = ["első", "második", "harmadik"];
+var listArray = ["első", "második", "harmadik"];
 
 const generateList = (array) => {
-	listElement = document.createElement('ul');
-	document.getElementsByTagName('body')[0].appendChild(listElement);
+	let listElementOpen = '<ul>';
 	for (i = 0; i < array.length; ++i) {
-			listItem = document.createElement('li');
-			listItem.innerHTML = array[i];
-			listElement.appendChild(listItem);
+		const listItem = `<li>${array[i]}</li>`;
+		listElementOpen = `${listElementOpen}${listItem}`
 	}
+
+	return `${listElementOpen}</ul>`
 }
 
 generateList(listArray);
